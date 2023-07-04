@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+        <!--login-->
+        <div class="content first-content">
+            <div class="first-column">
+                <button id="signin" class="btn btn-primary">cadastrar</button>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Login</h2>
+                <br> <br>
+                <form class="form" method="POST" action="login.php?tipo=escola">
+                    <label class="label-input" for="">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </label>
+
+                    <label class="label-input" for="">
+                        <input type="password" name="senha" placeholder="Senha" required>
+                    </label>
+                
+                    <a class="password" href="#">esqueceu sua senha?</a>
+                    <button class="btn btn-second">cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!--cadastro-->
+        <div class="content second-content">
+            <div class="first-column">
+                <button id="signup" class="btn btn-primary">Login</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Cadastro</h2>
+                <br> <br>
+                <form class="form" method="POST" action="cadastro.php?tipo=escola">
+                    <label class="label-input" for="">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </label>
+                
+                    <label class="label-input" for="">
+                        <input type="text" name="nome" placeholder="Nome da instituição" required>
+                    </label>
+
+                    <label class="label-input" for="">
+                        <input type="password" name="senha" placeholder="Senha" required>
+                    </label>
+
+                    <button class="btn btn-second">login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="loginn.js"></script>
+</body>
+</html>
