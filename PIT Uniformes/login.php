@@ -10,14 +10,13 @@
         //escola
         case 'escola':
             $email = $_POST['email']; $senha = $_POST['senha'];
-
-            $stmt = $con->prepare("select count(id_escola) from escola where email = ? and senha = ?");
+            $stmt = $con -> prepare("select token from escola where email = ? and senha = ?");
                     $stmt->bind_param("ss", $email, $senha);
                     $stmt->execute();
                     $result = $stmt->get_result();
-            if ($result->$num_rows >= 1)
+            if ($result->num_rows >= 1)
             {
-                echo 'Login concluído';
+                header('Location: pagsCadastro/pagCadUniforme.html');
             }
             else
             {
@@ -29,11 +28,11 @@
         case 'fornecedor':
             $email = $_POST['email']; $senha = $_POST['senha'];
 
-            $stmt = $con->prepare("select count(id_fornecedor) from fornecedor where email = ? and senha = ?");
+            $stmt = $con->prepare("select id_fornecedor from fornecedor where email = ? and senha = ?");
                     $stmt->bind_param("ss", $email, $senha);
                     $stmt->execute();
                     $result = $stmt->get_result();
-            if ($result->$num_rows >= 1)
+            if ($result->num_rows >= 1)
             {
                 echo 'Login concluído';
             }
@@ -47,11 +46,11 @@
         case 'aluno':
         $token = $_POST['token'];
 
-        $stmt = $con->prepare("select count(token) from escola where token = ?");
+        $stmt = $con->prepare("select token from escola where token = ?");
                     $stmt->bind_param("i", $token);
                     $stmt->execute();
                     $result = $stmt->get_result();
-            if ($result->$num_rows >= 1)
+            if ($result->num_rows >= 1)
             {
                 echo 'Login concluído';
             }

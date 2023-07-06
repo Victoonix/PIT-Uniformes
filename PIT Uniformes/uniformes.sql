@@ -15,4 +15,13 @@ email varchar(80) not null,
 senha varchar(80) not null
 ) engine=innodb;
 
+create table uniformes (
+id_uniforme int not null primary key auto_increment,
+tamanho varchar(3),
+sexo varchar(20),
+cor varchar(80)
+/* token int not null,
+foreign key (token) references escola(token) */
+) engine=innodb;
+
 select * from escola;
