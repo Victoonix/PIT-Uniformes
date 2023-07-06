@@ -14,9 +14,12 @@
                     $stmt->bind_param("ss", $email, $senha);
                     $stmt->execute();
                     $result = $stmt->get_result();
+
             if ($result->num_rows >= 1)
             {
-                header('Location: pagsCadastro/pagCadUniforme.html');
+                $row = $result->fetch_assoc();
+                $token = $row['token'];
+                header("Location: vendas.php?u=$token");
             }
             else
             {
@@ -32,9 +35,10 @@
                     $stmt->bind_param("ss", $email, $senha);
                     $stmt->execute();
                     $result = $stmt->get_result();
+
             if ($result->num_rows >= 1)
             {
-                echo 'Login concluído';
+                header("Location: vendas.php");
             }
             else
             {
@@ -52,7 +56,7 @@
                     $result = $stmt->get_result();
             if ($result->num_rows >= 1)
             {
-                echo 'Login concluído';
+                header("Location: vendas.php?u=$token");
             }
             else
             {

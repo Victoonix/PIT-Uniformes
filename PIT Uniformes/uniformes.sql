@@ -2,11 +2,10 @@ create database uniformes;
 use uniformes;
 
 create table escola (
-id_escola int primary key not null auto_increment,
+token int primary key not null,
 nome varchar(80) not null,
 email varchar(80) not null,
-senha varchar(80) not null,
-token int not null
+senha varchar(80) not null
 ) engine=innodb;
 
 create table fornecedor (
@@ -25,3 +24,4 @@ foreign key (token) references escola(token) */
 ) engine=innodb;
 
 select * from escola;
+insert into escola (token, nome, email, senha) values (999999, 'teste', 'teste@a', 'a');
