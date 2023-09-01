@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link rel="stylesheet" type="text/css" href="css\style1.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
     </button>
     <button class="uniforme">
       <img src="assets/imgs/MD_imgSemImagem.png" class="uni">
-      <p>camisa 2</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate commodi, quisquam necessitatibus cupiditate veritatis inventore aut aliquid ducimus quas alias hic ipsum, velit laudantium voluptatibus deleniti reiciendis id eligendi.</p>
     </button>
     <button  class="uniforme">
       <img src="assets/imgs/MD_imgSemImagem.png" class="uni">
