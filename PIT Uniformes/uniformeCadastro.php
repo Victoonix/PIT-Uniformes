@@ -4,10 +4,14 @@ session_start();
 
     $con = new mysqli("localhost", "root", "", "uniformes");
 
-$tamanho = $_POST['tamanho']; $sexo = $_POST['sexo']; $cor = $_POST['cor'];
+if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === 0) {
+    
+}
 
-$stmt = $con->prepare("insert into uniformes (tamanho, sexo, cor) values (?, ?, ?)");
-                    $stmt->bind_param("sss", $tamanho, $sexo, $cor);
+$tamanho = $_POST['tamanho']; $sexo = $_POST['sexo']; $cor = $_POST['cor']; $token = $_SESSION['token'];
+
+$stmt = $con->prepare("insert into uniformes (tamanho, sexo, cor, token) values (?, ?, ?, ?)");
+                    $stmt->bind_param("sss", $tamanho, $sexo, $cor, );
                     $stmt->execute();
                     $stmt->close();
                     $con->close();

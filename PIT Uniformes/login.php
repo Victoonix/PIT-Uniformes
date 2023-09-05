@@ -18,8 +18,8 @@
             if ($result->num_rows >= 1)
             {
                 $row = $result->fetch_assoc();
-                $token = $row['token'];
-                header("Location: vendas.php?u=$token");
+                $_SESSION['token'] = $row['token'];
+                header("Location: vendas.php");
             }
             else
             {
