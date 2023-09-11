@@ -25,4 +25,7 @@ foreign key (token) references escola(token)
 ) engine=innodb;
 
 select * from escola;
-insert into escola (token, nome, email, senha) values (999999, 'teste', 'teste@a', 'a');
+
+INSERT INTO uniformes (tamanho, sexo, cor, token, caminho_imagem) 
+VALUES ('P', 'Masculino', 'Azul', 12345, 'uploads/minha_foto.jpg');
+
