@@ -2,6 +2,7 @@
     session_start();
     header("Content-Type: text/html; charset=utf8");
     $_SESSION['admin'] = false;
+    $_SESSION['fornecedor'] = false;
 
     $tipo = !isset($_GET["tipo"]) ? "listar" : $_GET["tipo"];
 
@@ -42,6 +43,7 @@
             if ($result->num_rows >= 1)
             {
                 $_SESSION['admin'] = true;
+                $_SESSION['fornecedor'] = true;
                 header("Location: vendas.php");
             }
             else

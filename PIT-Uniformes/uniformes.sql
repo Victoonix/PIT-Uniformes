@@ -24,8 +24,3 @@ caminho_imagem varchar(255) not null,
 foreign key (token) references escola(token)
 ) engine=innodb;
 
-select * from escola;
-
-INSERT INTO uniformes (tamanho, sexo, cor, token, caminho_imagem) 
-VALUES ('P', 'Masculino', 'Azul', 12345, 'uploads/minha_foto.jpg');
-

@@ -18,7 +18,7 @@
             <?php
             session_start();
             if($_SESSION['admin'] === true) {
-            echo '<a href="pagsCadastro/pagCadUniforme.html"><button class="botao-cadastro">Cadastrar uniforme</button></a>';
+            echo '<a href="pagsCadastro/pagCadUniforme.php"><button class="botao-cadastro">Cadastrar uniforme</button></a>';
             }
             ?>   
         </div>
