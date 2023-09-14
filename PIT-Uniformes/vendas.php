@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>RVK STORE - Home</title>
     <link rel="stylesheet" type="text/css" href="css\styleVendas.css" />
+    <?php
+      header('Content-Type: text/html; charset=utf-8');
+    ?>
   </head>
 
   <body>
