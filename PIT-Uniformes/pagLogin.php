@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php session_destroy()?>
+    <?php session_start();
+    if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+        header("Location: index.php");
+    }?>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/stylerec.css" />
+    <title>Formulário de Email e Senha</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form" action="recuperar_senha.php" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" required />
+          <button type="submit" class="btn">Login</button>
+            <p class="message">Não registrado? <a href="pagLogin.html">Crie sua conta!</a></p>
+      </form>
+    </div>
+  </body>
+</html>

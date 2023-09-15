@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+        header("Location: index.php");
+    }
     header("Content-Type: text/html; charset=utf8");
 
     $tipo = !isset($_GET["tipo"]) ? "listar" : $_GET["tipo"];

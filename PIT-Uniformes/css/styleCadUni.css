@@ -1,0 +1,72 @@
+*{
+  margin: 0px;
+}
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #58af9b;
+}
+.uniforme{
+ padding: 0px;
+}
+#titulo{
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+h2 {display: flex;
+  justify-content: center;
+  width: 100%;
+color:white;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#tamanho{
+  border: 0.1px solid;
+  border-radius: 30px;
+}
+#sexo{
+  border: 0.1px solid;
+  border-radius: 30px;
+}
+#cor{
+  border: 0.1px solid;
+  border-radius: 30px;
+}
+#token{
+  border: 0.1px solid;
+  border-radius: 30px;
+}
+#preco{
+  border: 0.1px solid;
+  border-radius: 30px;
+}
+#estoque{
+  border: 0.1px solid;
+  height: 22px;
+  border-radius: 30px;
+}
+form {
+  background-color: white;
+  margin-top: 2%;
+  margin-left: 39%;
+  width: 20%;
+  padding: 30px;
+  border: 0px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+}

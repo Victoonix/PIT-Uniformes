@@ -22,8 +22,9 @@
                 $row = $result->fetch_assoc();
                 $_SESSION['token'] = $row['token'];
                 $_SESSION['admin'] = true;
+                $_SESSION['login'] = true;
                 $token = $row['token'];
-                header("Location: vendas.php?u=$token");
+                header("Location: vendas.php");
             }
             else
             {
@@ -44,6 +45,7 @@
             {
                 $_SESSION['admin'] = true;
                 $_SESSION['fornecedor'] = true;
+                $_SESSION['login'] = true;
                 header("Location: vendas.php");
             }
             else
@@ -61,8 +63,10 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
             if ($result->num_rows >= 1)
-            {                
-                header("Location: vendas.php?u=$token");
+            {   
+                $_SESSION['token'] = $row['token'];
+                $_SESSION['login'] = true;
+                header("Location: vendas.php");
             }
             else
             {
