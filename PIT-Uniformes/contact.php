@@ -19,7 +19,10 @@
                   <a href="index.php"><li>Home</li></a>
                   <a href="about.php"><li>Sobre nós</li></a>
                   <a href="contact.php"><li>Contato</li></a>
-                  <a href="pagLogin.php"><li>Login</li></a>
+                  <?php session_start();
+                  if (isset($_SESSION['login']) && $_SESSION['login'] === true)
+                  {echo '<a href="vendas.php"><li>Camisas</li></a>';} 
+                  else {echo '<a href="pagLogin.php"><li>Login</li></a>';} ?>
                 </ul>
               </div>
             </header>
