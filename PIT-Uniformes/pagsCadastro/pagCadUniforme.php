@@ -9,7 +9,7 @@
 </head>
 <body class="uniforme">
   <div id="titulo">
-    <h2>Formulario de Cadastro</h2>
+    <h2>Cadastrar Uniforme</h2>
   </div>
   <form method="post" action="..\uniformeCadastro.php" enctype="multipart/form-data">
     <label for="tamanho">Tamanho</label>
@@ -38,6 +38,49 @@
     <input type="file" name="imagem" id="imagem" required>
     <br> <br>
     <input type="submit" value="Cadastrar">
+  </form>
+  <div id="titulo">
+    <h2>Atualizar Uniforme</h2>
+  </div>
+  <form method="post" action="..\uniformeUpdate.php" enctype="multipart/form-data">
+  <label for="id">ID do uniforme</label>
+    <input type="text" name="id" id="id" placeholder="Ex: 12" required>
+
+  <label for="tamanho">Tamanho</label>
+    <input type="text" name="tamanho" id="tamanho" placeholder="Ex: P, M, G" required>
+
+    <label for="sexo">Sexo</label>
+    <input type="text" name="sexo" id="sexo" placeholder="Ex: M, F" required>
+
+    <label for="cor">Cor</label>
+    <input type="text" name="cor" id="cor" placeholder="Ex: Azul" required>
+
+    <label for="preco">Preço</label>
+    <input type="text" name="preco" id="preco" placeholder="Ex: 60,00" required>
+
+    <label for="estoque">Estoque</label>
+    <input type="estoque" name="estoque" id="estoque" placeholder="Ex: 15" required>
+    <?php
+
+      if ($_SESSION['fornecedor'] === true) {
+        echo '<label for="token">Token da escola</label>
+        <input type="text" name="token" id="token" placeholder="Ex: 123456 (Consulte a escola)" required>';
+      }     
+    ?>
+    <br> <br>
+    <label for="imagem">Imagem</label>
+    <input type="file" name="imagem" id="imagem" required>
+    <br> <br>
+    <input type="submit" value="Atualizar">
+  </form>
+  <div id="titulo">
+    <h2>Deletar Uniforme</h2>
+  </div>
+  <form method="post" action="..\uniformeDelete.php" enctype="multipart/form-data">
+  <label for="id">ID do uniforme</label>
+    <input type="text" name="id" id="id" placeholder="Ex: 12" required>
+    <br> <br>
+    <input type="submit" value="Deletar">
   </form>
 </body>
 </html>
