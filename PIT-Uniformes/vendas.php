@@ -8,10 +8,11 @@
       header('Content-Type: text/html; charset=utf-8');
 
       $con = new mysqli("localhost", "root", "", "uniformes");     
-      $stmt = $con->prepare("SELECT caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'M'");
+      $stmt = $con->prepare("SELECT id_uniforme, caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'M'");
       $stmt->execute();
       $result = $stmt->get_result();
 
+      $id_M = [];
       $camisas_M = [];
       $cor_M = [];
       $tamanho_M = [];
@@ -19,6 +20,7 @@
       $estoque_M = [];
 
       while ($row = $result->fetch_assoc()) {
+          $id_M[] = $row['id_uniforme'];
           $camisas_M[] = $row['caminho_imagem'];
           $cor_M[] = $row['cor'];
           $tamanho_M[] = $row['tamanho'];
@@ -69,6 +71,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_M[0]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_M[0]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_M[0]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -81,6 +84,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_M[1]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_M[1]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_M[1]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -93,6 +97,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_M[2]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_M[2]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_M[2]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -105,6 +110,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_M[3]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_M[3]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_M[3]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -117,6 +123,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_M[4]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_M[4]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_M[4]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -126,10 +133,11 @@
   </div>
   <?php
       $con = new mysqli("localhost", "root", "", "uniformes");     
-      $stmt = $con->prepare("SELECT caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'F'");
+      $stmt = $con->prepare("SELECT id_uniforme, caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'F'");
       $stmt->execute();
       $result = $stmt->get_result();
-
+      
+      $id_F = [];
       $camisas_F = [];
       $cor_F = [];
       $tamanho_F = [];
@@ -137,6 +145,7 @@
       $estoque_F = [];
 
       while ($row = $result->fetch_assoc()) {
+          $id_F[] = $row['id_uniforme'];
           $camisas_F[] = $row['caminho_imagem'];
           $cor_F[] = $row['cor'];
           $tamanho_F[] = $row['tamanho'];
@@ -153,6 +162,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_F[0]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_F[0]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_F[0]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -165,6 +175,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_F[1]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_F[1]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_F[1]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -177,6 +188,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_F[2]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_F[2]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_F[2]?>)</p>
       </a>
       <?php } ?>
     </div>
@@ -189,6 +201,7 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_F[3]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_F[3]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_F[3]?>)</p>
       </a>';
       <?php } ?>
     </div>
@@ -201,11 +214,12 @@
         <p>---------------------------</p>
         <p class="preco">R$ <?php echo $preco_F[4]?></p>
         <p class="preco">Em estoque: <?php echo $estoque_F[4]?> unidades</p>
+        <p class="preco">(ID <?php echo $id_F[4]?>)</p>
       </a>';
       <?php } ?>
     </div>
       </div>
-      <a href="explorar uniformes"><h2>> Ver mais</h2></a>
+      <!--<a href="explorar.php"><h2>> Ver mais</h2></a>-->
 
   <footer class="site-footer">
     <div class="container">
