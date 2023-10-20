@@ -8,36 +8,23 @@
       header('Content-Type: text/html; charset=utf-8');
 
       $con = new mysqli("localhost", "root", "", "uniformes");     
-      $stmt = $con->prepare("select caminho_imagem from uniformes where sexo = 'M'");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    while ($row = $result->fetch_assoc()) {
-                      $camisas_M[] = $row['caminho_imagem'];
-                  }
-      $stmt = $con->prepare("select cor from uniformes where sexo = 'M'");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    while ($row = $result->fetch_assoc()) {
-                      $cor_M[] = $row['cor'];
-                  }
-      $stmt = $con->prepare("select tamanho from uniformes where sexo = 'M'");
-                  $stmt->execute();
-                  $result = $stmt->get_result();
-                  while ($row = $result->fetch_assoc()) {
-                    $tamanho_M[] = $row['tamanho'];
-                }
-      $stmt = $con->prepare("select preco from uniformes where sexo = 'M'");
-                $stmt->execute();
-                $result = $stmt->get_result();
-                while ($row = $result->fetch_assoc()) {
-                  $preco_M[] = $row['preco'];
-              }
-      $stmt = $con->prepare("select estoque from uniformes where sexo = 'M'");
-              $stmt->execute();
-              $result = $stmt->get_result();
-              while ($row = $result->fetch_assoc()) {
-                $estoque_M[] = $row['estoque'];
-            }
+      $stmt = $con->prepare("SELECT caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'M'");
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      $camisas_M = [];
+      $cor_M = [];
+      $tamanho_M = [];
+      $preco_M = [];
+      $estoque_M = [];
+
+      while ($row = $result->fetch_assoc()) {
+          $camisas_M[] = $row['caminho_imagem'];
+          $cor_M[] = $row['cor'];
+          $tamanho_M[] = $row['tamanho'];
+          $preco_M[] = $row['preco'];
+          $estoque_M[] = $row['estoque'];
+      }
     ?>
   </head>
 
@@ -51,9 +38,12 @@
             <?php
             session_start();
             if($_SESSION['admin'] === true) {
-            echo '<a href="pagsCadastro/pagCadUniforme.php"><button class="botao-cadastro">Cadastrar uniforme</button></a>';
+            echo '<a href="pagsCadastro/pagCadUniforme.php"><button class="botao-cadastro">Administrar uniformes</button></a><span> </span>';
+            echo '<a href="historico.php"><button class="botao-cadastro">Consultar vendas</button></a><span> </span>';
+            echo '<a href="vincular.php"><button class="botao-cadastro">Adicionar aluno</button></a>';
             }
             ?>
+            <a href="mudarsenha.php"><button class="botao-cadastro">Alterar senha</button></a>
             <a href="sair.php"><button class="botao-cadastro">Sair</button></a>
           </div>
         </div>
@@ -136,24 +126,23 @@
   </div>
   <?php
       $con = new mysqli("localhost", "root", "", "uniformes");     
-      $stmt = $con->prepare("select caminho_imagem from uniformes where sexo = 'F'");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    while ($row = $result->fetch_assoc()) {
-                      $camisas_F[] = $row['caminho_imagem'];
-                  }
-      $stmt = $con->prepare("select cor from uniformes where sexo = 'F'");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    while ($row = $result->fetch_assoc()) {
-                      $cor_F[] = $row['cor'];
-                  }
-      $stmt = $con->prepare("select tamanho from uniformes where sexo = 'F'");
-                  $stmt->execute();
-                  $result = $stmt->get_result();
-                  while ($row = $result->fetch_assoc()) {
-                    $tamanho_F[] = $row['tamanho'];
-                }
+      $stmt = $con->prepare("SELECT caminho_imagem, cor, tamanho, preco, estoque FROM uniformes WHERE sexo = 'F'");
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      $camisas_F = [];
+      $cor_F = [];
+      $tamanho_F = [];
+      $preco_F = [];
+      $estoque_F = [];
+
+      while ($row = $result->fetch_assoc()) {
+          $camisas_F[] = $row['caminho_imagem'];
+          $cor_F[] = $row['cor'];
+          $tamanho_F[] = $row['tamanho'];
+          $preco_F[] = $row['preco'];
+          $estoque_F[] = $row['estoque'];
+      }
     ?>
     <div class="catalogo"> 
     <div class="produto">
@@ -216,6 +205,7 @@
       <?php } ?>
     </div>
       </div>
+      <a href="explorar uniformes"><h2>> Ver mais</h2></a>
 
   <footer class="site-footer">
     <div class="container">

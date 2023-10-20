@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario</title>
+  <link rel="stylesheet" type="text/css" href="css\styleCadUni.css">
+</head>
+<body class="uniforme">
+  <div id="titulo">
+    <h2>Adicionar aluno</h2>
+  </div>
+  <form method="post" action="vincularAluno.php" enctype="multipart/form-data">
+    <label for="matricula">Número da matrícula</label>
+    <input type="text" name="matricula" id="matricula" required>
+    <br>
+    <input type="submit" value="Cadastrar">
+    <br> <br>
+    <p>A senha do aluno será igual à matrícula até ser alterada</p>
+  </form>
+</body>
+</html>
